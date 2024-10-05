@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&display=swap");
+
+body {
+  font-family: "Nunito", cursive;
+  color: #efefef;
+  text-align: center;
+  padding: 4em 0;
+  background-image: url("fondo.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.contenedorPadre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d1e22;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-carrossel {
+  --widthItem: 150px;
+  --heightItem: 100px;
+  width: var(--widthItem);
+  height: var(--heightItem);
+  perspective: 1000px;
+}
+
+.carrossel {
+  --rotatey: 0;
+  font-size: 3rem;
+  position: relative;
+  transform: rotatey(var(--rotatey));
+  transform-style: preserve-3d;
+  user-select: none;
+  cursor: grab;
+}
+
+.carrossel-item {
+  opacity: 0.5;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: opacity 0.5s;
+  backface-visibility: hidden;
+  width: var(--widthItem);
+  height: var(--heightItem);
+}
+
+.carrossel-item:hover {
+  opacity: 1;
+}
+
+.carrossel,
+.carrossel-item {
+  width: 100%;
+  height: 100%;
+}
+
+.carrossel-item:nth-child(1) {
+  --rotatey: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  background: linear-gradient(-229deg, #070F34, #0313A6);
+}
+
+.carrossel-item:nth-child(2) {
+  --rotatey: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  background: linear-gradient(-229deg, #9001CB, #5fa8f5);
+}
+
+.carrossel-item:nth-child(3) {
+  --rotatey: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  background: linear-gradient(-229deg, #0cebeb, #F72585);
+}
+.carrossel-item:nth-child(4) {
+  --rotatey: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  background: linear-gradient(-229deg, #0093e9, #80d0c7);
+}
+
+.carrossel-item:nth-child(5) {
+  --rotate: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  background: linear-gradient(-229deg, #9001CB, #f72525);
+}
+
+.carrossel-item:nth-child(6) {
+  --rotate: 0;
+  transform: rotatey(var(--rotatey)) translatez(var(--tz));
+  background: linear-gradient(-229deg, #0bb1df, #6b6b06);
+}
+
+
+a {
+  color: rgb(220, 210, 210);
+  text-decoration: none;
+}
+
+a:hover{
+  color: white;
+}
+
+.index {
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.image-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+.circular-image {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.text-content {
+  max-width: 500px;
+  text-align: justify;
+}
+
+.tutorial-wrapper {
+  width: 80%; /* Define el ancho como el 80% del viewport */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+  padding: 20px; /* Espacio interno alrededor del contenido */
+}
+
+.tuto { /* Fondo claro para el contenedor */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espacio interno dentro del contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  column-count: 2; /* Define el número de columnas */
+  column-gap: 30px; /* Espacio entre columnas */
+  column-rule: 1px solid #ccc; /* Línea que separa las columnas */
+}
+
+.tuto h1, .tuto h2, .tuto h3 {
+  color: white; /* Color de los títulos */
+  margin-bottom: 10px; /* Espacio debajo de los títulos */
+  break-inside: avoid; /* Evita que los títulos se corten entre columnas */
+}
+
+.tuto p, .tuto ol, .tuto ul {
+  color: white; /* Color del texto */
+  line-height: 1.6; /* Espacio entre líneas para mejorar la legibilidad */
+  margin-bottom: 15px; /* Espacio entre párrafos y listas */
+}
+
+#cursor {
+  position: fixed;
+  top: calc(var(--cursor-size) * -0.5);
+  left: calc(var(--cursor-size) * -0.5);
+  mix-blend-mode: difference;
+  filter: url(#goo);
+}
+
+.cursor-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  border-radius: var(--cursor-size);
+  transform-origin: center center;
+}
+
+@media screen and (min-width: 576px) {
+  .container-carrossel {
+    --widthItem: 250px;
+    --heightItem: 200px;
+  }
+}
